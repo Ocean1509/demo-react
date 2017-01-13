@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+    <style>
+        .red{color:red}
+    </style>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var HelloMeg = React.createClass({
+            render:function(){
+                return <h2 className={this.props.className}>这是数字{this.props.num}</h2>
+            }
+        })
+        ReactDOM.render(
+            <HelloMeg num="100" className="red"></HelloMeg>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
+

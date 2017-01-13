@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo7</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>    
+    <script type="text/babel">
+    var MyInput = React.createClass({
+        hasFocus:function(){
+            this.refs.ownInput.focus();
+            this.refs.ownInput.value="获得焦点了"
+        },
+        render:function(){
+            return (
+                <div>
+                    <input type="text" placeholder="它将获得焦点" ref="ownInput"/>
+                    <input type="button" value="点击" onClick={this.hasFocus}/>
+                </div>
+            )
+        }
+    })
+    
+    ReactDOM.render(
+            <MyInput></MyInput>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
+

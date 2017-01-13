@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo5</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+    console.log(React)
+       var MyList = React.createClass({
+           render:function(){
+               return (
+                   <ul>
+                       {
+                           React.Children.map(this.props.children,function(child){
+                               return <li>{child}</li>
+                           })
+                       }
+                   </ul>
+               )
+           }
+       })
+
+       ReactDOM.render(
+           <MyList>
+               <span>第一</span>
+               <span>第二</span>
+           </MyList>,
+           document.getElementById('example')
+       )
+    </script>
+</body>
+</html>
+

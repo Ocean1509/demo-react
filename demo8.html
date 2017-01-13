@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo8</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var MyComponet = React.createClass({
+            getInitialState:function(){
+                return{
+                    change:false
+                }
+            },
+            hasChangeState:function(){
+                this.setState({
+                    change:!this.state.change
+                })
+            },
+            render:function(){
+                var text = this.state.change ? '状态1' : '状态2'
+                return (
+                    <div>
+                        <div>{text}</div>
+                        <input type="button" value="点击切换文字" onClick={this.hasChangeState}/>
+                    </div>
+                )
+            }
+        })
+
+        ReactDOM.render(
+            <MyComponet></MyComponet>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo6</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var Numb = React.createClass({
+            propTypes:{
+                num:React.PropTypes.string.isRequired
+            },
+            getDefaultProps :()=>{
+                return{
+                    title:'默认标题'
+                }
+            },
+            render:function(){
+                return <div>标题是：{this.props.title},数字是:{this.props.num}</div>
+            },
+        })
+        var data='123';
+        ReactDOM.render(
+            <Numb num={data}></Numb>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
+

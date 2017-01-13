@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo2</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var arry=['marry','heny','peter'];
+        ReactDOM.render(
+            <div>
+            {
+                arry.map((name,key) => {
+                    return <div>Hello, {name}!</div>
+                })
+            }
+            </div>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
