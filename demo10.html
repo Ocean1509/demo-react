@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo10</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var MyFontSize = React.createClass({
+            getInitialState:function(){
+                return{
+                    fontSize:14
+                }
+            },
+            componentDidMount:function(){
+                var timer = setInterval(function(){
+                    var size = this.state.fontSize;
+                    size += 2;
+                    if(size >40){
+                        size=14
+                    }
+                  
+                    this.setState({
+                        fontSize:size
+                    })
+                }.bind(this),500)
+            },
+            render:function(){
+                return(
+                    <div style={{fontSize:this.state.fontSize+'px'}}>变大</div>
+                )
+            }
+        })
+
+        ReactDOM.render(
+            <MyFontSize></MyFontSize>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
+
